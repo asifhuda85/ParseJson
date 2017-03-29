@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E031BD7F1E71F44300580FF5 /* CardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031BD7E1E71F44300580FF5 /* CardParser.swift */; };
 		E0BBBA2D1E6A5423009C45D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BBBA2C1E6A5423009C45D2 /* AppDelegate.swift */; };
 		E0BBBA2F1E6A5423009C45D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BBBA2E1E6A5423009C45D2 /* ViewController.swift */; };
 		E0BBBA321E6A5423009C45D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0BBBA301E6A5423009C45D2 /* Main.storyboard */; };
@@ -30,7 +29,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E031BD7E1E71F44300580FF5 /* CardParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardParser.swift; sourceTree = "<group>"; };
 		E0BBBA291E6A5423009C45D2 /* ParseJson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseJson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BBBA2C1E6A5423009C45D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0BBBA2E1E6A5423009C45D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				E0BBBA351E6A5423009C45D2 /* LaunchScreen.storyboard */,
 				E0BBBA381E6A5423009C45D2 /* Info.plist */,
 				E0BBBA4E1E6A560B009C45D2 /* ParseJson.swift */,
-				E031BD7E1E71F44300580FF5 /* CardParser.swift */,
 				E0BBBA501E6A564B009C45D2 /* Model.swift */,
 			);
 			path = ParseJson;
@@ -215,7 +212,6 @@
 				E0BBBA2F1E6A5423009C45D2 /* ViewController.swift in Sources */,
 				E0BBBA2D1E6A5423009C45D2 /* AppDelegate.swift in Sources */,
 				E0BBBA4D1E6A54D7009C45D2 /* MyTableViewCell.swift in Sources */,
-				E031BD7F1E71F44300580FF5 /* CardParser.swift in Sources */,
 				E0BBBA4F1E6A560B009C45D2 /* ParseJson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

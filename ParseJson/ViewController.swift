@@ -16,7 +16,6 @@ class ViewController: UIViewController, updateModel {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        parseJson()
         let api = ParseJson()
         api.delegate = self
         

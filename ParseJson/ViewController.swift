@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, updateModel {
+class ViewController: UIViewController,updateModel {
 
     @IBOutlet weak var myTableView: UITableView!
     
@@ -20,7 +20,8 @@ class ViewController: UIViewController, updateModel {
         api.delegate = self
         
         api.parseJson()
-        // Do any additional setup after loading the view, typically from a nib.
+//        parseJson()
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +42,49 @@ class ViewController: UIViewController, updateModel {
             self.myTableView.reloadData()
         }
     }
+    
+//    func parseJson() {
+//        
+//        let requestURL = URL(string: "https://www.reddit.com/.json")!
+//        let urlRequest = URLRequest(url: requestURL)
+//        let task = URLSession.shared.dataTask(with: urlRequest as URLRequest) {
+//            (data, response, error) -> Void in
+//            
+//            let httpResponse = response as! HTTPURLResponse
+//            let statusCode = httpResponse.statusCode
+//            
+//            if (statusCode == 200) {
+//                do{
+//                    let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as? NSDictionary
+//                    
+//                    if let children = ((json?["data"] as? NSDictionary)?["children"] as? [Dictionary<String,AnyObject>]) {
+//
+//                        for child in children {
+//                            var model = [Model]()
+//                            if let images = (((child["data"])?["preview"] as? NSDictionary)?["images"] as? [Dictionary<String,AnyObject>] ) , let title = ((child["data"])?["title"] as? String) {
+//                                for image in images {
+//                                    if let url = (image["source"]?["url"] as? String){
+//                                        let mockModel = Model(title: title, url: url)
+//                                        model.append(mockModel)
+//                                    }
+//                                }
+//                            }
+//
+//                        }
+//                        self.delegate?.didDownloadItem(arr: model)
+//
+//                    }
+//                    
+//                }catch {
+//                    print("Error with Json: \(error)")
+//                }
+//                
+//            }
+//        }
+//        task.resume()
+//    }
+//    
+//
 
 }
 
@@ -50,7 +94,7 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath) as! MyTableViewCell
         let model = models[indexPath.row]
         
-        cell.myLabel.text = model.name
+        cell.myLabel.text = model.title
 
         return cell
     }
@@ -60,3 +104,8 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate {
     }
 }
 
+extension String {
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z]", options: .regularExpression) == nil
+    }
+}

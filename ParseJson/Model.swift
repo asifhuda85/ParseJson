@@ -10,13 +10,13 @@ import Foundation
 
 class Model {
     
-    var name = ""
-    var year = ""
-    
-    init(json: [String: AnyObject]) {
-        self.name = (json["stationName"] as? String)!
-        self.year = (json["buildYear"] as? String)!
-    }
+//    var name = ""
+//    var year = ""
+//    
+//    init(json: [String: AnyObject]) {
+//        self.name = (json["stationName"] as? String)!
+//        self.year = (json["buildYear"] as? String)!
+//    }
 //    init(data:[String: AnyObject]){
 //        super.init()
 //        self.name = getStringFromJSON(data: data, key: "stationName")
@@ -33,5 +33,13 @@ class Model {
 //        
 //    }
     
+    
+    var title = ""
+    var url = ""
+    
+    init(title:String , url: String) {
+        self.title = title
+        self.url = url
+    }
     
 }

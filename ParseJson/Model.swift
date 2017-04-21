@@ -10,6 +10,13 @@ import Foundation
 
 class Model {
     
+    var title = ""
+    var url = ""
+    
+    init(title:String , url: String) {
+        self.title = title
+        self.url = url
+    }
 //    var name = ""
 //    var year = ""
 //    
@@ -33,13 +40,6 @@ class Model {
 //        
 //    }
     
-    
-    var title = ""
-    var url = ""
-    
-    init(title:String , url: String) {
-        self.title = title
-        self.url = url
-    }
+   
     
 }

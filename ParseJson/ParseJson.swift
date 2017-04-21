@@ -63,29 +63,6 @@ class ParseJson {
 
 }
 
-/*
- if let stations = json["MRData"]  {
- if let raceTable = stations["RaceTable"] as? [String: Any]{
- if let races = raceTable["Races"] as? [[String:Any]] {
- for i in races {
- if let season = i["Results"] {
- print("The data is \(season)")
- 
- }
- 
- }
- //                                if let Results = Races["Results"]{
- //
- //                                }
- 
- }
- 
- }
-
- 
- 
- 
- */
 
 
 func getParseJson () {

@@ -18,7 +18,6 @@ class ParseJson {
 //    func parseJson(completion:(([Model]) -> Void)!) {
         func parseJson() {
 
-
         let requestURL = URL(string: "https://www.reddit.com/.json")!
         let urlRequest = URLRequest(url: requestURL)
         let task = URLSession.shared.dataTask(with: urlRequest as URLRequest) {

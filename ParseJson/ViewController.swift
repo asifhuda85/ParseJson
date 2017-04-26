@@ -22,6 +22,8 @@ class ViewController: UIViewController,updateModel {
         api.parseJson()
       
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

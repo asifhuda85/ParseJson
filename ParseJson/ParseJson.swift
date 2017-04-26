@@ -30,32 +30,25 @@ class ParseJson {
             if (statusCode == 200) {
                 print("Everyone is fine, file downloaded successfully.")
                 do{
-                    
                     let json = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as? NSDictionary
                     
                     if let children = ((json?["data"] as? NSDictionary)?["children"] as? [Dictionary<String,AnyObject>]) {
                         var model = [Model]()
-
                         for child in children {
                             if let images = (((child["data"])?["preview"] as? NSDictionary)?["images"] as? [Dictionary<String,AnyObject>] ) , let title = ((child["data"])?["title"] as? String) {
                                 for image in images {
                                     if let url = (image["source"]?["url"] as? String){
                                        
                                         model.append(Model(title: title, url: url))
-                                        
                                     }
                                 }
                             }
                             self.delegate?.didDownloadItem(arr: model)
                         }
-                        
                     }
-                    
-
                 }catch {
                     print("Error with Json: \(error)")
                 }
-                
             }
         }
         task.resume()
@@ -63,36 +56,6 @@ class ParseJson {
 
 }
 
-
-
-func getParseJson () {
-    let url = NSURL(string: "")
-    let request = NSURLRequest(url: url as! URL)
-    
-    let task = URLSession.shared.dataTask(with: request as! URLRequest) { (data, response, error) in
-        guard error == nil && data != nil else
-        {
-           return print("There is an Error, \(error)")
-        }
-        
-        let httpStatus = request as? HTTPURLResponse
-
-        if httpStatus?.statusCode == 200 {
-            if data?.count != 0 {
-                
-                
-            }else {
-                print("There is no Data")
-            }
-            
-        }else {
-            print("Error", httpStatus?.statusCode)
-        }
-    }
-    task.resume()
-    
-    
-}
 
 
 
